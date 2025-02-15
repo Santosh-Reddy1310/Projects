@@ -1,0 +1,71 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Root HTML element */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-image: linear-gradient(30deg, #182c51, #09101e);
+    overflow: hidden;
+}
+
+/* Moon Styling */
+.moon {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    position: relative;
+    background-image: linear-gradient(30deg, #13223f, #0e1a30);
+}
+
+/* Moon ::before for Animation */
+.moon::before {
+    content: ""; /* Empty content for pseudo-element */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    border-radius: 50%; /* Circular shape */
+    z-index: -1; /* Place behind .moon */
+    width: 100%; /* Match parent's width */
+    height: 100%; /* Match parent's height */
+    position: absolute; /* Position relative to parent */
+    display: block; /* Ensures the pseudo-element is a block */
+    animation: eclipse-animation 3.2s linear infinite alternate; /* Animation setup */
+}
+
+/* Keyframes for Eclipse Animation */
+@keyframes eclipse-animation {
+    0% {
+        box-shadow: none;
+        transform: translate(-30px, 30px) scale(0.9); /* Start slightly shifted and smaller */
+    }
+    50% {
+        transform: translate(0px, 0px) scale(1.02); /* Center and slightly expand */
+        box-shadow: 0 0 10px #f9f3f2, 0 0 80px 8px #c7938b; /* Glow effect */
+        background-color: #efdbd8; /* Light background for glowing effect */
+    }
+    100% {
+        transform: translate(30px, -30px) scale(0.9); /* Shift oppositely and shrink */
+        box-shadow: none; /* Remove glow */
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .moon {
+        width: 160px; /* Smaller moon for smaller devices */
+        height: 160px;
+    }
+}
