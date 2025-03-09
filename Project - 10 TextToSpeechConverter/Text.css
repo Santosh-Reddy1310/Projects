@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,cyan,#f8ffd2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+}
+
+.hero h1, .hero h5 {
+    font-size: 45px;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    width: 0; /* Initial width for animation */
+    animation: revealText 2s ease-out forwards; /* Apply animation */
+}
+
+.hero h1 {
+    margin-top: -90px;
+    margin-bottom: 90px;
+}
+
+.hero h5 {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    animation-delay: 0.5s; /* Delay the animation for h5 */
+}
+
+@keyframes revealText {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* Or a specific width if needed */
+    }
+}
+
+.hero h5 span{
+    color: #ff0044;
+}
+
+textarea {
+    width: 600px;
+    height: 200px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transform transition */
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* Initialize transform */
+}
+
+textarea:hover {
+    width: 600px;
+    height: 200px;
+    background: #040404;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 0px 0px;
+    transform: perspective(500px) rotateX(20deg); /* Rotate in Z on hover */
+}
+
+textarea :placeholder{
+    font-size: 16px;
+    color: #ddd;
+}
+
+.row{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button{
+    background:#ff2963;
+    color:#fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+button img{
+    width: 16px;
+    margin-right: 10px;
+}
+
+select{
+    flex: 1;
+    color: #fff;
+    background:#ff2963;
+    height: 50px;
+    padding: 0px 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+    background-image: url(images/dropdown.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: calc(100% - 20px);
+    background-position-y: 20px;
+}
+

@@ -110,28 +110,38 @@ body {
     color: #7634f0;
 }
 
-/* Prompt Styling */
+/* Chat Container Styling */
+.chats-container .message {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+/* Adjusted Chat Bar */
 .prompt-container {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 16px 0;
+    padding: 10px 0;
     background: var(--primary-color);
 }
 
-.prompt-container :where(.prompt-wrapper, .prompt-form, .prompt-actions) {
+.prompt-wrapper {
     display: flex;
-    gap: 12px;
-    height: 56px;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .prompt-wrapper .prompt-form {
-    width: 100%;
-    height: 100%;
-    border-radius: 130px;
+    width: 80%; /* Adjust width to make it smaller */
+    height: 48px; /* Reduced height */
+    border-radius: 40px; /* More rounded edges */
     background: var(--secondary-color);
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
 }
 
 .prompt-form .prompt-input {
@@ -141,7 +151,7 @@ body {
     outline: none;
     border: none;
     font-size: 1rem;
-    padding-left: 24px;
+    padding-left: 16px;
     color: var(--text-color);
 }
 
@@ -149,49 +159,50 @@ body {
     color: var(--placeholder-color);
 }
 
-.prompt-wrapper button {
-    height: 100%;
-    width: 69px;
+.prompt-form .prompt-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 7px;
+}
+
+/* Adjusted Button Sizes */
+.prompt-form .prompt-actions button {
+    height: 38px; /* Adjust button size */
+    width: 38px;
     border: none;
     background: var(--secondary-color);
     color: var(--text-color);
     font-size: 1rem;
-    flex-shrink: 0;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.prompt-wrapper button:hover {
+.prompt-form .prompt-actions button:hover {
     background: var(--secondary-hover-color);
 }
 
-.prompt-form .prompt-actions {
-    gap: 5px;
-    margin-right: 7px;
-}
-
-.prompt-form .prompt-actions button {
-    height: 45px;
-    width: 45px;
-}
-
-/* Show Send Button Up Arrow Only When Text is Entered */
+/* Send Button */
 .prompt-form #send-prompt-btn {
     color: #fff;
     display: none;
     background: #1d7efd;
+    height: 42px; /* Adjusted height */
+    width: 42px; /* Adjusted width */
+    border-radius: 50%;
 }
 
 .prompt-form #send-prompt-btn:hover {
     background: #0264e3;
 }
 
+/* Show Send Button Only When Text is Entered */
 .prompt-form .prompt-input:not(:placeholder-shown) ~ .prompt-actions #send-prompt-btn {
     display: flex;
 }
 
-
+/* Disclaimer Text */
 .disclaimer-text {
     margin-top: 20px;
     font-size: 0.9rem;
