@@ -1,0 +1,43 @@
+.Controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.TextAreaContainer {
+    flex-grow: 1;
+    padding: 8px 16px;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.TextArea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: #ffffff;
+    color: #333;
+    /* Added text color for the textarea */
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background: #000000;
+    color: #fffefe;
+    /* Set the button's text/fill color */
+}
+
+.Button svg {
+    fill: currentColor;
+    /* Use currentColor to inherit from button's color */
+}
